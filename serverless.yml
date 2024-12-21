@@ -25,13 +25,13 @@ custom:
     webpackConfig: ./webpack.config.js
     includeModules: true
 
-#functions:
- # hello:
-  #  handler: handler.hello
-   # events:
-    #  - httpApi:
-     #     path: /
-      #    method: get
+functions:
+ hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
 
 functions:
     getUser:
