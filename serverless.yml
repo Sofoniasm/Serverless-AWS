@@ -18,14 +18,22 @@ custom:
      - bucketName: sofoniasserverless22795245
        localDir: UploadData
 
-functions:
-  hello:
-    handler: handler.hello
-    events:
-      - httpApi:
-          path: /
-          method: get
+#functions:
+ # hello:
+  #  handler: handler.hello
+   # events:
+    #  - httpApi:
+     #     path: /
+      #    method: get
 
+functions:
+    getUser:
+        handler: lambdas/getUser.handler
+        events:
+          - http:
+              path: get-user/{ID}
+              method: get
+              cors: true
 resources:
     Resources:
         DemoBucketUpload:
