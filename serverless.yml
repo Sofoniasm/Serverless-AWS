@@ -12,11 +12,18 @@ provider:
 
 plugins:
     - Serverless-s3-sync
+    - Serverless-webpack # Added serverless-webpack plugin
+
+package: 
+    individually: true
 
 custom:
   s3Sync:
      - bucketName: sofoniasserverless22795245
        localDir: UploadData
+  webpack: # Added Webpack custom configuration
+    webpackConfig: ./webpack.config.js
+    includeModules: true
 
 #functions:
  # hello:
@@ -34,12 +41,10 @@ functions:
               path: get-user/{ID}
               method: get
               cors: true
+
 resources:
     Resources:
         DemoBucketUpload:
            Type: AWS::S3::Bucket
            Properties:
               BucketName: sofoniasserverless22795245
-
-
-               
