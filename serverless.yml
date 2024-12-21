@@ -48,3 +48,16 @@ resources:
            Type: AWS::S3::Bucket
            Properties:
               BucketName: sofoniasserverless22795245
+
+        MyDynamoDBTable:
+           Type: AWS::DynamoDB::Table
+           Properties:
+              TableName: $(self:custom.tablename)
+              AttributeDefinitions:
+                - AttributeName: ID
+                  AttributeType: s
+              KeySchema:
+                - AttributeName: ID
+                  KeyType: HASH
+              BillingMode: PAY_PER_REQUEST
+              
