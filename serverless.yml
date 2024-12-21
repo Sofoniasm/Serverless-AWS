@@ -8,6 +8,15 @@ service: myServerless
 provider:
   name: aws
   runtime: nodejs20.x
+  profile: sofoniasserverless
+
+plugins:
+    - Serverless-s3-sync
+
+custom:
+  s3Sync:
+     - bucketName: sofoniasserverless22795245
+       localDir: UploadData
 
 functions:
   hello:
@@ -16,3 +25,13 @@ functions:
       - httpApi:
           path: /
           method: get
+
+resources:
+    Resources:
+        DemoBucketUpload:
+           Type: AWS::S3::Bucket
+           Properties:
+              BucketName: sofoniasserverless22795245
+
+
+               
