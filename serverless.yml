@@ -33,14 +33,14 @@ functions:
           path: /
           method: get
 
-functions:
-    getUser:
-        handler: lambdas/getUser.handler
-        events:
-          - http:
-              path: get-user/{ID}
-              method: get
-              cors: true
+#functions:
+ #   getUser:
+  #      handler: lambdas/getUser.handler
+   #     events:
+    #      - http:
+     #         path: get-user/{ID}
+      #        method: get
+       #       cors: true
 
 resources:
     Resources:
